@@ -64,10 +64,12 @@ endif
 CPPFLAGS = -Wall -g -Os -mcpu=cortex-m4 -mthumb -MMD $(OPTIONS) -I.
 
 # compiler options for C++ only
-CXXFLAGS = -std=gnu++0x -felide-constructors -fno-exceptions -fno-rtti
+CPP_STD ?= gnu++0x
+CXXFLAGS = -std=$(CPP_STD) -felide-constructors -fno-exceptions -fno-rtti
 
 # compiler options for C only
-CFLAGS =
+C_STD ?= c11
+CFLAGS = -std=$(C_STD)
 
 # linker options
 LDFLAGS = -Os -Wl,--gc-sections,--defsym=__rtc_localtime=0 --specs=nano.specs -mcpu=cortex-m4 -mthumb -T$(MCU_LD)
