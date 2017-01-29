@@ -1,0 +1,27 @@
+Compiling
+=========
+
+Firstly, make sure you've read:
+   https://www.pjrc.com/teensy/gcc.html
+
+Debian (and derivatives, like Ubuntu)
+-------------------------------------
+If you read stuff in the link above, you'll probably
+have installed the following by now:
+
+   apt-get install gcc-avr binutils-avr avr-libc
+
+Additionally, the gcc-arm-none-eabi package is required,
+so run the following command to install it:
+
+   apt-get install gcc-arm-none-eabi
+
+Build paths
+-----------
+If you'd like to use Arduino, you'll have to make sure
+that your ARDUINOPATH is correctly set.
+
+If you don't like, or do not want to use Arduino, you can
+simply set the NO_ARDUINO environment variable before building:
+
+   NO_ARDUINO=1 make
